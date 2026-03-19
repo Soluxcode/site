@@ -38,9 +38,11 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-serif text-xl md:text-2xl font-semibold tracking-wide text-gold transition-colors group-hover:text-gold-light">
-            SoluxCode
-          </span>
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/soluxcode_logo_main_f29551de.png"
+            alt="SoluxCode Logo"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}

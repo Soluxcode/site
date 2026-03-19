@@ -8,9 +8,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-2xl font-semibold text-gold mb-3">
-              SoluxCode
-            </h3>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/soluxcode_logo_main_f29551de.png"
+              alt="SoluxCode Logo"
+              className="h-14 w-auto object-contain mb-3"
+            />
             <p className="font-serif text-sm italic text-cream/50 mb-4">
               Codificando Consciência, Manifestando Realidade
             </p>

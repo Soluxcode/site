@@ -41,7 +41,7 @@ export default function Navbar() {
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/soluxcode_logo_main_f29551de.png"
             alt="SoluxCode Logo"
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-12 md:h-14 w-auto object-contain"
           />
         </Link>
 

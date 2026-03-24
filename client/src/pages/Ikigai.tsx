@@ -13,11 +13,11 @@ const beneficios = [
 ];
 
 const metodo333 = [
-  { fase: "Raiz", semanas: "4 semanas", tema: "Espírito", desc: "Filosofia convergente, valores, consciência e presença." },
-  { fase: "Tronco", semanas: "4 semanas", tema: "Mente", desc: "Método IA + pensamento crítico, estudo filosófico estruturado." },
-  { fase: "Galho", semanas: "2 semanas", tema: "Matéria", desc: "Ikigai, mapear dons e oferta ao mundo." },
-  { fase: "Folhas", semanas: "1 semana", tema: "Comunidade", desc: "Troca, desafios em grupo, conexões reais." },
-  { fase: "Frutos", semanas: "1 semana", tema: "Resultados", desc: "Plano MVP remunerado, ação concreta." },
+  { fase: "Raiz", etapa: "Fundação", tema: "Espírito", desc: "Filosofia convergente, valores, consciência e presença. Resolver a desconexão entre quem você é e o que você faz." },
+  { fase: "Tronco", etapa: "Estrutura", tema: "Mente", desc: "Método IA + pensamento crítico. Clareza sobre o que te trava e ferramentas para sair da paralisia." },
+  { fase: "Galho", etapa: "Direção", tema: "Matéria", desc: "Ikigai aplicado: mapear seus dons reais e transformá-los em oferta concreta ao mundo." },
+  { fase: "Folhas", etapa: "Conexão", tema: "Comunidade", desc: "Troca, desafios em grupo, conexões reais. Sair do isolamento e construir junto." },
+  { fase: "Frutos", etapa: "Ação", tema: "Resultados", desc: "Plano MVP remunerado. Sair da teoria e colocar em prática — com acompanhamento." },
 ];
 
 export default function Ikigai() {
@@ -50,12 +50,12 @@ export default function Ikigai() {
               Lead Magnet Gratuito
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-cream leading-tight">
-              Descubra seu Ikigai
+              Descubra seu Propósito
               <br />
-              <span className="text-gold">na Era da IA</span>
+              <span className="text-gold">e Transforme em Ação</span>
             </h1>
             <p className="mt-6 text-lg text-cream/70 leading-relaxed max-w-2xl mx-auto">
-              IA acelerou tudo menos seu propósito. O Método 333 alinha Espírito, Mente e Matéria para você encontrar seu Ikigai com profundidade — não com fórmulas rasas.
+              Você sabe que pode mais, mas não sabe por onde começar. O Método 333 resolve o que te trava: alinha Espírito, Mente e Matéria para você sair da paralisia e construir com clareza.
             </p>
           </motion.div>
         </div>
@@ -125,13 +125,13 @@ export default function Ikigai() {
           <FadeIn>
             <div className="text-center mb-12">
               <p className="font-sans text-sm tracking-[0.3em] uppercase text-gold/60 mb-4">
-                Curso Online — 12 Semanas
+                Resolva o que te trava
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-cream mb-4">
                 Método 333
               </h2>
               <p className="text-cream/60 max-w-2xl mx-auto leading-relaxed">
-                Filosofia antiga + IA moderna = seu Ikigai ativado em 12 semanas. Não sou guru. Quebrei cabeça 8 anos. Este é o método que funcionou.
+                Filosofia antiga + IA moderna = clareza real sobre quem você é e o que fazer com isso. Não sou guru. Quebrei cabeça 8 anos. Este é o método que funcionou para sair da paralisia e começar a construir.
               </p>
             </div>
           </FadeIn>
@@ -142,7 +142,7 @@ export default function Ikigai() {
                 <div className="flex items-start gap-5 p-5 bg-card/30 border border-border/15 rounded-sm hover:border-gold/15 transition-all duration-300">
                   <div className="shrink-0 w-16 text-center">
                     <span className="font-serif text-lg font-semibold text-gold">{m.fase}</span>
-                    <p className="text-[10px] text-cream/40 mt-0.5">{m.semanas}</p>
+                    <p className="text-[10px] text-cream/40 mt-0.5">{m.etapa}</p>
                   </div>
                   <div className="border-l border-border/15 pl-5">
                     <span className="text-xs font-sans tracking-[0.15em] uppercase text-gold/50">{m.tema}</span>
@@ -177,7 +177,7 @@ export default function Ikigai() {
                 </p>
               </div>
               <p className="text-cream/60 leading-relaxed mb-8 max-w-xl mx-auto">
-                Inclui o curso completo de 12 semanas, os 2 eBooks, acesso à comunidade vitalícia e suporte direto do Job. Vagas limitadas para garantir qualidade.
+                Inclui o método completo, os 2 eBooks, acesso à comunidade vitalícia e suporte direto do Job. Vagas limitadas para garantir qualidade e acompanhamento real.
               </p>
 
               <form onSubmit={handleWaitlist} className="max-w-md mx-auto space-y-4">

@@ -1,8 +1,9 @@
 /**
  * SoluxCode Home Page
  * Design: "Jardim de Código" — Organicismo Digital
- * Hero: cosmic tree + book cover texture overlay + floating philosophical code
+ * Hero: clean navy gradient + gold particles + floating code easter eggs
  * Palette: navy-deep, gold, green-333, cream
+ * NO book cover image — clean, sober, elegant background only
  */
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -10,9 +11,8 @@ import { ArrowRight, Sparkles, Brain, Target } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import SectionTitle from "@/components/SectionTitle";
 import FloatingCode from "@/components/FloatingCode";
+import GoldParticles from "@/components/GoldParticles";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/hero-bg-T9pR8ptdv4mntknUM9ZB4q.webp";
-const BOOK_COVER = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/soluxcode_capa_livro_54f0c0ab.jpg";
 const PILAR_ESPIRITO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-espirito-aUAf2VRQwtyQMqR44QfHqW.webp";
 const PILAR_MENTE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-mente-VrpWRY4p45q9K9BK5qMXSz.webp";
 const PILAR_MATERIA = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-materia-PLftYEFJ9k5Wk9wW9NyH9r.webp";
@@ -59,37 +59,40 @@ export default function Home() {
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION — Cosmic tree + book cover texture + floating code
+          HERO SECTION — Clean navy gradient + gold particles + floating code
           ═══════════════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Layer 1: Main cosmic tree background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${HERO_BG})` }}
-        />
-
-        {/* Layer 2: Book cover texture overlay — subtle code pattern */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-soft-light"
-          style={{
-            backgroundImage: `url(${BOOK_COVER})`,
-            opacity: 0.18,
-          }}
-        />
-
-        {/* Layer 3: Gradient overlays for depth and readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/30 to-navy-deep" />
-
-        {/* Layer 4: Subtle radial glow from center */}
+        {/* Layer 1: Clean dark navy gradient background */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 50% at 50% 45%, rgba(191,155,48,0.06) 0%, transparent 70%)",
+              "linear-gradient(180deg, #0a0e1a 0%, #0d1321 30%, #101829 60%, #0a0e1a 100%)",
           }}
         />
 
-        {/* Layer 5: Animated floating code snippets */}
+        {/* Layer 2: Subtle radial glow from center-top */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 50% at 50% 35%, rgba(191,155,48,0.04) 0%, transparent 70%)",
+          }}
+        />
+
+        {/* Layer 3: Very subtle secondary glow for depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 40% 40% at 50% 50%, rgba(30,50,80,0.3) 0%, transparent 70%)",
+          }}
+        />
+
+        {/* Layer 4: Gold particles (subtle floating dots of light) */}
+        <GoldParticles />
+
+        {/* Layer 5: Animated floating code snippets (easter eggs) */}
         <FloatingCode />
 
         {/* Hero content */}
@@ -109,7 +112,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-cream max-w-5xl mx-auto"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
             SoluxCode
           </motion.h1>
@@ -119,7 +121,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-4 font-serif text-xl md:text-2xl lg:text-3xl italic text-gold/90 max-w-3xl mx-auto"
-            style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
           >
             Codificando Consciência, Manifestando Realidade
           </motion.p>
@@ -129,7 +130,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-8 text-base md:text-lg text-cream/70 max-w-2xl mx-auto leading-relaxed font-light"
-            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
           >
             Você já se perguntou como a sabedoria de milhares de anos pode
             transformar a forma como você usa tecnologia hoje? A SoluxCode
@@ -144,7 +144,7 @@ export default function Home() {
           >
             <Link
               href="/quem-somos"
-              className="group flex items-center gap-2 px-6 py-3 bg-gold/10 border border-gold/30 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 backdrop-blur-sm"
+              className="group flex items-center gap-2 px-6 py-3 bg-gold/10 border border-gold/30 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300"
             >
               Conheça o Método
               <ArrowRight
@@ -154,7 +154,7 @@ export default function Home() {
             </Link>
             <Link
               href="/academia"
-              className="px-6 py-3 border border-cream/20 text-cream/70 font-sans text-sm tracking-wide rounded-sm hover:border-cream/40 hover:text-cream transition-all duration-300 backdrop-blur-sm"
+              className="px-6 py-3 border border-cream/20 text-cream/70 font-sans text-sm tracking-wide rounded-sm hover:border-cream/40 hover:text-cream transition-all duration-300"
             >
               Acesse a Academia
             </Link>
@@ -181,16 +181,8 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════
           INTRO TEXT — Philosophical bridge
           ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        {/* Subtle code texture in transition */}
-        <div
-          className="absolute inset-0 bg-repeat opacity-[0.03]"
-          style={{
-            backgroundImage: `url(${BOOK_COVER})`,
-            backgroundSize: "600px",
-          }}
-        />
-        <div className="relative container max-w-3xl text-center">
+      <section className="py-20 md:py-28">
+        <div className="container max-w-3xl text-center">
           <FadeIn>
             <p className="font-serif text-xl md:text-2xl text-cream/80 leading-relaxed italic">
               Aqui, unimos filosofia antiga — estoicismo, hermetismo, vedanta,
@@ -252,16 +244,8 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════
           PARA QUEM É
           ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-16 md:py-24 bg-navy-light/30 overflow-hidden">
-        {/* Subtle code texture */}
-        <div
-          className="absolute inset-0 bg-repeat opacity-[0.02]"
-          style={{
-            backgroundImage: `url(${BOOK_COVER})`,
-            backgroundSize: "800px",
-          }}
-        />
-        <div className="relative container max-w-4xl">
+      <section className="py-16 md:py-24 bg-navy-light/30">
+        <div className="container max-w-4xl">
           <SectionTitle
             title="Para Quem É a SoluxCode"
             subtitle="Se alguma dessas frases ressoa com você, está no lugar certo."
@@ -270,7 +254,7 @@ export default function Home() {
           <div className="space-y-4">
             {paraQuemE.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="flex items-start gap-4 p-5 bg-card/30 border border-border/10 rounded-sm hover:border-gold/15 transition-all duration-300 backdrop-blur-sm">
+                <div className="flex items-start gap-4 p-5 bg-card/30 border border-border/10 rounded-sm hover:border-gold/15 transition-all duration-300">
                   <span className="mt-0.5 w-2 h-2 rounded-full bg-gold/60 shrink-0" />
                   <p className="text-cream/70 text-sm md:text-base leading-relaxed">
                     {item}

@@ -1,21 +1,29 @@
 /**
- * SoluxCode Home Page
- * Design: "Jardim de Código" — Organicismo Digital
- * Hero: clean navy gradient + gold particles + floating code easter eggs
- * Palette: navy-deep, gold, green-333, cream
- * NO book cover image — clean, sober, elegant background only
+ * SoluxCode Home Page — v2
+ * Posicionamento: "Conectar pessoas ao propósito real. Viver do que ama."
  */
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Brain, Target } from "lucide-react";
+import { ArrowRight, Sparkles, Brain, Target, AlertCircle } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import SectionTitle from "@/components/SectionTitle";
 import FloatingCode from "@/components/FloatingCode";
 import GoldParticles from "@/components/GoldParticles";
 
-const PILAR_ESPIRITO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-espirito-aUAf2VRQwtyQMqR44QfHqW.webp";
-const PILAR_MENTE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-mente-VrpWRY4p45q9K9BK5qMXSz.webp";
-const PILAR_MATERIA = "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-materia-PLftYEFJ9k5Wk9wW9NyH9r.webp";
+const PILAR_ESPIRITO =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-espirito-aUAf2VRQwtyQMqR44QfHqW.webp";
+const PILAR_MENTE =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-mente-VrpWRY4p45q9K9BK5qMXSz.webp";
+const PILAR_MATERIA =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310419663026804728/ZgTLDxJpHrs6RKoBD2LyNF/pilares-materia-PLftYEFJ9k5Wk9wW9NyH9r.webp";
+
+const doresReais = [
+  "Trabalha 8h por dia em algo que não te realiza — e sente que desperdiça sua vida.",
+  "Sabe que pode mais, mas toda vez que tenta mudar, a rotina te engole de volta.",
+  "Já consumiu dezenas de cursos de produtividade e autoajuda. Nenhum mudou nada de verdade.",
+  "Usa IA todo dia mas nunca parou pra perguntar: o que eu realmente quero construir?",
+  "Tem uma ideia, um talento, um sonho — mas não sabe como transformar isso em algo concreto.",
+];
 
 const pilares = [
   {
@@ -23,7 +31,7 @@ const pilares = [
     title: "Espírito",
     subtitle: "Consciência e Presença",
     description:
-      "Filosofia não é teoria morta. É prática diária. Ensinamos como aplicar princípios filosóficos milenares na sua rotina real — do primeiro café da manhã às decisões mais difíceis.",
+      "Filosofia não é teoria morta. É prática diária. Ensinamos como aplicar princípios filosóficos milenares na sua rotina — do primeiro café da manhã às decisões mais difíceis.",
     image: PILAR_ESPIRITO,
     label: "Raiz",
   },
@@ -47,22 +55,18 @@ const pilares = [
   },
 ];
 
-const paraQuemE = [
-  "Sente que a tecnologia poderia servir a algo maior do que entretenimento e produtividade cega.",
-  "Quer estudar filosofia mas acha os textos originais difíceis demais para começar sozinho.",
-  "Já usa inteligência artificial mas quer ir além de pedir resumos e respostas prontas.",
-  "Busca crescimento pessoal com profundidade, sem misticismo vazio ou promessas de transformação instantânea.",
-  "Acredita que humanos e máquinas podem trabalhar juntos de forma consciente.",
+const naoSomos = [
+  "Não somos mais um curso de produtividade com 7 passos para o sucesso.",
+  "Não somos coaching motivacional que some depois que você paga.",
+  "Não usamos IA para dar respostas prontas — usamos para fazer as perguntas certas.",
+  "Não prometemos transformação instantânea. Prometemos método real.",
 ];
 
 export default function Home() {
   return (
     <>
-      {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION — Clean navy gradient + gold particles + floating code
-          ═══════════════════════════════════════════════════════════════ */}
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Layer 1: Clean dark navy gradient background */}
         <div
           className="absolute inset-0"
           style={{
@@ -70,8 +74,6 @@ export default function Home() {
               "linear-gradient(180deg, #0a0e1a 0%, #0d1321 30%, #101829 60%, #0a0e1a 100%)",
           }}
         />
-
-        {/* Layer 2: Subtle radial glow from center-top */}
         <div
           className="absolute inset-0"
           style={{
@@ -79,8 +81,6 @@ export default function Home() {
               "radial-gradient(ellipse 70% 50% at 50% 35%, rgba(191,155,48,0.04) 0%, transparent 70%)",
           }}
         />
-
-        {/* Layer 3: Very subtle secondary glow for depth */}
         <div
           className="absolute inset-0"
           style={{
@@ -88,14 +88,9 @@ export default function Home() {
               "radial-gradient(ellipse 40% 40% at 50% 50%, rgba(30,50,80,0.3) 0%, transparent 70%)",
           }}
         />
-
-        {/* Layer 4: Gold particles (subtle floating dots of light) */}
         <GoldParticles />
-
-        {/* Layer 5: Animated floating code snippets (easter eggs) */}
         <FloatingCode />
 
-        {/* Hero content */}
         <div className="relative z-10 container text-center pt-20 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,57 +106,54 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-cream max-w-5xl mx-auto"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-cream max-w-4xl mx-auto"
           >
-            SoluxCode
+            Você sente que pode mais.
+            <br />
+            <span className="text-gold">A SoluxCode existe pra isso.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 font-serif text-xl md:text-2xl lg:text-3xl italic text-gold/90 max-w-3xl mx-auto"
+            className="mt-6 text-base md:text-lg lg:text-xl text-cream/70 max-w-2xl mx-auto leading-relaxed font-light"
           >
-            Codificando Consciência, Manifestando Realidade
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-8 text-base md:text-lg text-cream/70 max-w-2xl mx-auto leading-relaxed font-light"
-          >
-            Você já se perguntou como a sabedoria de milhares de anos pode
-            transformar a forma como você usa tecnologia hoje? A SoluxCode
-            nasceu dessa pergunta.
+            Conectamos pessoas ao seu propósito real — para que você saia da paralisia,
+            descubra o que ama fazer, e construa uma vida com sentido e liberdade.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
-              href="/quem-somos"
-              className="group flex items-center gap-2 px-6 py-3 bg-gold/10 border border-gold/30 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/20 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300"
+              href="/ikigai"
+              className="group flex items-center gap-2 px-7 py-3.5 bg-gold/15 border border-gold/40 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/25 hover:shadow-lg hover:shadow-gold/10 transition-all duration-300"
             >
-              Conheça o Método
-              <ArrowRight
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              Descubra seu Propósito — Grátis
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/academia"
-              className="px-6 py-3 border border-cream/20 text-cream/70 font-sans text-sm tracking-wide rounded-sm hover:border-cream/40 hover:text-cream transition-all duration-300"
+              href="/quem-somos"
+              className="px-7 py-3.5 border border-cream/20 text-cream/70 font-sans text-sm tracking-wide rounded-sm hover:border-cream/40 hover:text-cream transition-all duration-300"
             >
-              Acesse a Academia
+              Conheça o Método
             </Link>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="mt-8 text-xs text-cream/30 font-sans"
+          >
+            Fundado por Job Willians · 7 anos de estudo filosófico independente · Sem fórmulas rasas
+          </motion.p>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -178,16 +170,51 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          INTRO TEXT — Philosophical bridge
-          ═══════════════════════════════════════════════════════════════ */}
+      {/* DOR REAL */}
+      <section className="py-20 md:py-28 bg-navy-light/20">
+        <div className="container max-w-4xl">
+          <FadeIn>
+            <p className="font-sans text-sm tracking-[0.3em] uppercase text-gold/60 mb-4 text-center">
+              Seja honesto consigo
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-cream text-center mb-10">
+              Você já se sentiu assim?
+            </h2>
+          </FadeIn>
+
+          <div className="space-y-3">
+            {doresReais.map((dor, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="flex items-start gap-4 p-5 bg-card/30 border border-border/10 rounded-sm hover:border-gold/15 transition-all duration-300">
+                  <AlertCircle size={16} className="text-gold/40 shrink-0 mt-0.5" />
+                  <p className="text-cream/70 text-sm md:text-base leading-relaxed">{dor}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.5}>
+            <p className="mt-10 text-center font-serif text-xl md:text-2xl italic text-gold/80">
+              Se alguma dessas frases ressoou — você está no lugar certo.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* PONTE */}
       <section className="py-20 md:py-28">
         <div className="container max-w-3xl text-center">
           <FadeIn>
-            <p className="font-serif text-xl md:text-2xl text-cream/80 leading-relaxed italic">
-              Aqui, unimos filosofia antiga — estoicismo, hermetismo, vedanta,
-              taoísmo — com inteligência artificial, não para substituir o
-              pensamento humano, mas para amplificá-lo.
+            <div className="h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10" />
+            <p className="font-serif text-xl md:text-2xl text-cream/80 leading-relaxed">
+              A SoluxCode une a sabedoria dos grandes filósofos —
+              estoicismo, hermetismo, vedanta, taoísmo — com inteligência
+              artificial consciente. Não para substituir o pensamento humano.
+              <span className="text-gold font-semibold"> Para amplificá-lo.</span>
+            </p>
+            <p className="mt-6 text-base text-cream/60 leading-relaxed">
+              Aqui você não recebe respostas prontas. Você aprende a fazer as perguntas
+              certas — e a agir a partir das suas próprias respostas.
             </p>
             <p className="mt-6 text-base text-gold/80 font-sans font-bold tracking-wide">
               Não vendemos fórmulas mágicas. Ensinamos método.
@@ -196,10 +223,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          3 PILARES — Espírito, Mente, Matéria
-          ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24">
+      {/* 3 PILARES */}
+      <section className="py-16 md:py-24 bg-navy-light/10">
         <div className="container">
           <SectionTitle
             title="Os 3 Pilares"
@@ -227,12 +252,8 @@ export default function Home() {
                     <h3 className="font-serif text-2xl font-semibold text-cream mb-1">
                       {pilar.title}
                     </h3>
-                    <p className="text-sm text-gold/70 font-sans mb-4">
-                      {pilar.subtitle}
-                    </p>
-                    <p className="text-sm text-cream/60 leading-relaxed">
-                      {pilar.description}
-                    </p>
+                    <p className="text-sm text-gold/70 font-sans mb-4">{pilar.subtitle}</p>
+                    <p className="text-sm text-cream/60 leading-relaxed">{pilar.description}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -241,24 +262,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          PARA QUEM É
-          ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-navy-light/30">
-        <div className="container max-w-4xl">
-          <SectionTitle
-            title="Para Quem É a SoluxCode"
-            subtitle="Se alguma dessas frases ressoa com você, está no lugar certo."
-          />
+      {/* O QUE NÃO SOMOS */}
+      <section className="py-16 md:py-24">
+        <div className="container max-w-3xl">
+          <FadeIn>
+            <p className="font-sans text-sm tracking-[0.3em] uppercase text-gold/60 mb-4 text-center">
+              Honestidade antes de tudo
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-cream text-center mb-10">
+              O que a SoluxCode <em>não</em> é
+            </h2>
+          </FadeIn>
 
-          <div className="space-y-4">
-            {paraQuemE.map((item, i) => (
+          <div className="space-y-3">
+            {naoSomos.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="flex items-start gap-4 p-5 bg-card/30 border border-border/10 rounded-sm hover:border-gold/15 transition-all duration-300">
-                  <span className="mt-0.5 w-2 h-2 rounded-full bg-gold/60 shrink-0" />
-                  <p className="text-cream/70 text-sm md:text-base leading-relaxed">
-                    {item}
-                  </p>
+                <div className="flex items-start gap-4 p-5 bg-card/20 border border-border/10 rounded-sm">
+                  <span className="mt-1 text-gold/50 font-serif text-lg font-semibold shrink-0">✕</span>
+                  <p className="text-cream/60 text-sm md:text-base leading-relaxed">{item}</p>
                 </div>
               </FadeIn>
             ))}
@@ -266,10 +287,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          CLOSING — "Tijolo por tijolo. Café por café."
-          ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-32">
+      {/* CTA FINAL */}
+      <section className="py-24 md:py-32 bg-navy-light/20">
         <div className="container text-center max-w-2xl">
           <FadeIn>
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10" />
@@ -278,16 +297,25 @@ export default function Home() {
               <br />
               Café por café."
             </blockquote>
-            <p className="mt-8 text-cream/60 text-base md:text-lg leading-relaxed">
-              A SoluxCode é uma construção diária. Bem-vindo à jornada.
+            <p className="mt-6 text-cream/60 text-base md:text-lg leading-relaxed">
+              A SoluxCode é uma construção diária — como qualquer coisa que vale a pena.
+              Comece pelo primeiro passo: descubra seu propósito.
             </p>
-            <Link
-              href="/contato"
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-gold/10 border border-gold/30 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/20 transition-all duration-300"
-            >
-              Entre em Contato
-              <ArrowRight size={16} />
-            </Link>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/ikigai"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold/15 border border-gold/40 text-gold font-sans text-sm font-bold tracking-wide rounded-sm hover:bg-gold/25 transition-all duration-300"
+              >
+                Quero Descobrir meu Propósito
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/contato"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-cream/20 text-cream/60 font-sans text-sm tracking-wide rounded-sm hover:border-cream/40 hover:text-cream transition-all duration-300"
+              >
+                Falar com o Job
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>

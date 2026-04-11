@@ -12,6 +12,7 @@ import RefugioSolux from "./pages/RefugioSolux";
 import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
 import Ikigai from "./pages/Ikigai";
+import Privacidade from "./pages/Privacidade";
 import Layout from "./components/Layout";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/contato" component={Contato} />
         <Route path="/ikigai" component={Ikigai} />
+        <Route path="/privacidade" component={Privacidade} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
